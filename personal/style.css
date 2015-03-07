@@ -53,7 +53,7 @@ table {
 body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
 	color: white;
-	background-color: grey;
+	background-color: gray; /* only the American spelling of the word works for some reason... */
 }
 
 a:link, a:visited {
@@ -95,6 +95,7 @@ h1 {
 }
 
 /* I know pink is a douchy girly color, but why doesnt it work? */
+/* nando: Because even douchy girly colors need # before them ;) */
 .pretty {
-	color: FF67C0;
+	color: #FF67C0;
 }
