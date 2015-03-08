@@ -52,8 +52,12 @@ table {
 
 body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
+	font-weight: lighter;
+/* how do you make font-size responsive? I googled it but it's hard! 
+	even more, how would you advise to make the whole page responsive?*/
+	font-size: 15px;
 	color: white;
-	background-color: grey;
+	background-color: gray;
 }
 
 a:link, a:visited {
@@ -61,7 +65,7 @@ a:link, a:visited {
 	color: inherit;
 }
 
-#index {
+.index {
 	background-image: url("superman.jpg");
 	background-repeat: no-repeat;
     background-size: cover;
@@ -71,30 +75,47 @@ a:link, a:visited {
 
 /* navigation menu */
 nav {
-	margin-top: 20px;
+	margin-top: 1.5em;
 	font-weight: lighter;
 	text-align: center;
 }
 
 nav li {
 	display: inline-block;
-	margin-left: 20px;
-	margin-right: 20px;
+	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 /* content part */
 .content {
-	margin-top: 200px;
-	margin-left: 70px;
-	margin-right: 70px;
+	margin-top: 6em;
+	margin-left: 5em;
+	margin-right: 5em;
 }
 
-h1 {
-	font-size: 60px;
+/* landing-page */
+.landing-page {
+	max-width: 15em;
+/* why doesn't this margin auto thing center it? */
+	margin: 2em auto;
+	font-size: 4.5em;
 	font-weight: bold;
+	color: white;
 }
 
-/* I know pink is a douchy girly color, but why doesnt it work? */
 .pretty {
-	color: FF67C0;
+	color: #FF67C0;
+}
+
+/* about, work and connect */
+.section {
+	max-width: 40em;
+  	margin: 0px auto 60px auto;
+	background-color: white;
+	padding: 4em;
+	min-height: 20em;
+}
+
+p {
+	color: #414042;
 }
