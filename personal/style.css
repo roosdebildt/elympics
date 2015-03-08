@@ -56,7 +56,9 @@ body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
 	font-weight: lighter;
 /* how do you make font-size responsive? I googled it but it's hard! 
-	even more, how would you advise to make the whole page responsive?*/
+	even more, how would you advise to make the whole page responsive?
+	I started out by positioning everything with ems, but dunno if that's
+	the best approach */
 	font-size: 15px;
 	color: white;
 	background-color: gray;
