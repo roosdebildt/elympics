@@ -112,8 +112,6 @@ nav li {
 
  */
 .content {
-	/* declaring position so the h1 can float */
-	/*position: relative;*/
 	width: 90%;
 	margin: 3em auto 0 auto;
 	/* vh is a CSS3 measurement. Works in most modern browsers, not old ones. Means "viewport height". I'm using 70% of it. */
