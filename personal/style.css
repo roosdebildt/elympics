@@ -66,9 +66,9 @@ body {
 	/* I'm working mobile-first. So the "basic" font size (meaning, screens up to 799px wide, phones and smaller)
 	is set to 18px. */
 	font-size: 16px;
-	line-height: 
+	line-height: 18px;
 
-	/* Since only the*/
+	/* Since only the home text is white, the base will be dark gray. */
 	color: #333;
 	background-color: gray;
 }
