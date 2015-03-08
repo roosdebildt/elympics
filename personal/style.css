@@ -49,24 +49,31 @@ table {
 }
 
 /*This is where my own css begins*/
+/*
 
+nando: Beautiful work!!!!!!! You get a gold star.
+If you're trying to do a full-height background image, this is not a good way. Reasons:
+- Body is a tag so adding an #id to it is unnecessary. You could've just used a class, but even that
+is unnecessary; there's only one BODY tag on your code and we want it to be affected.
+- height: 100% does not work very well.
+
+My recommendation comes from this solution https://css-tricks.com/perfect-full-page-background-image/
+Check it out and see if you understand!
+
+*/
 body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
 	color: white;
-	background-color: grey;
+	background: url("superman.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 a:link, a:visited {
 	text-decoration: none;
 	color: inherit;
-}
-
-#index {
-	background-image: url("superman.jpg");
-	background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
 }
 
 /* navigation menu */
@@ -95,6 +102,7 @@ h1 {
 }
 
 /* I know pink is a douchy girly color, but why doesnt it work? */
+/* nando: Because even douchy girly colors need # before them ;) */
 .pretty {
-	color: FF67C0;
+	color: #FF67C0;
 }
