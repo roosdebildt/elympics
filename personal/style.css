@@ -1,3 +1,7 @@
+/* 
+ * Begin CSS Reset
+ */
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -48,20 +52,36 @@ table {
 	border-spacing: 0;
 }
 
-/*This is where my own css begins*/
-/*
+/* 
+ * End CSS reset
+ */
 
-*/
+/*
+ * Base (definitions of what basic elements look like)
+ */
 body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
 	font-weight: lighter;
-/* how do you make font-size responsive? I googled it but it's hard! 
-	even more, how would you advise to make the whole page responsive?
-	I started out by positioning everything with ems, but dunno if that's
-	the best approach */
-	font-size: 15px;
-	color: white;
+
+	/* I'm working mobile-first. So the "basic" font size (meaning, screens up to 799px wide, phones and smaller)
+	is set to 18px. */
+	font-size: 16px;
+	line-height: 18px;
+
+	/* Since only the home text is white, the base will be dark gray. */
+	color: #333;
 	background-color: gray;
+}
+
+p {
+	margin-top: 1em;
+	margin-bottom: .4em;
+	color: #414042;
+}
+
+h1 {
+	font-size: 2.4em;
+	font-weight: bold;
 }
 
 a:link, a:visited {
@@ -69,25 +89,16 @@ a:link, a:visited {
 	color: inherit;
 }
 
-/* I gave the body a class cause I may want to change the background-image
-for other pages like about, contact etc. */
-.index {
-	background: url("superman.jpg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
 /* navigation menu */
 nav {
-	margin-top: 1.5em;
+	color: white;
+	margin-top: 1.2em;
 	font-weight: lighter;
 	text-align: center;
+	font-size: 1.4em;
 }
 
+/* Make sure you define the base size of "li" explicity, check above */
 nav li {
 	display: inline-block;
 	margin-left: 1.5em;
@@ -95,35 +106,136 @@ nav li {
 }
 
 /* content part */
+/* 
+	nando: you should give THIS box a width rather than the H1. Then you can keep this constant throughout
+	the site and not have to re-define or create a bunch of exceptions.
+
+ */
 .content {
-	margin-top: 6em;
-	margin-left: 5em;
-	margin-right: 5em;
+	width: 90%;
+	margin: 3em auto 0 auto;
+	/* vh is a CSS3 measurement. Works in most modern browsers, not old ones. Means "viewport height". I'm using 70% of it. */
+	height: 70vh;
 }
 
 /* landing-page */
+/*  You created a class (.landing-page) for an element that appears only once (h1).
+	Instead, let's use that class to define the body, and select things (like the h1) inside it. Example:
+	
+	HTML
+	<body class="landing-page">
+	...
+		<div class="content">
+			<h1>Your title here</h1>
+		</div>
+	...
+	</body>
+
+	CSS:
+	.landing .content h1 {
+		[make it white, center-aligned, etc]
+	}
+
+	.landing-page is now the section identifier. It specifies your section's backgrounds.
+*/
 .landing-page {
-	max-width: 15em;
-/* why doesn't this margin auto thing center it? */
-	margin: 2em auto;
-	font-size: 4.5em;
-	font-weight: bold;
-	color: white;
+	background: url("superman.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
-.pretty {
+.landing-page h1 {
+	/* On this page ONLY, make h1 different: */
+	text-align: center;
+	color: white;
+	font-size: 4em;
+
+	/* Let's make your title vertically-centered by making it float! This is a CSS3 trick. */
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* Avoid creating classes when there are elements which are semantic and do the trick. <em> is perfect here. */
+.landing-page h1 em {
+	font-style: normal;
 	color: #FF67C0;
 }
 
+/* 
+	That way I could, for example, make it yellow on the about page:
+	.about h1 em {
+	color: #FAB71D;
+	}
+
+	Be careful, however, with these over-specific selectors. Be modular and re-usable whenever possible.
+*/
+
 /* about, work and connect */
-.section {
-	max-width: 40em;
+.about {
+	/* repeated the background just in case you want different backgrounds in every section */
+	background: url("superman.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.text-box {
+
   	margin: 0px auto 60px auto;
 	background-color: white;
 	padding: 4em;
-	min-height: 20em;
 }
 
-p {
-	color: #414042;
+
+/*
+	MEDIA QUERIES
+*/
+
+/*
+	This is how you make your page be responsive. I've commented it out so it won't confuse you; uncomment
+	and play around to find your results. I just put some random things in there.
+
+	Here's how it works:
+	1) Make a media query (in the first case, monitors larger than 800px, then 1024px)
+	2) place your statements inside that query (you will be repeating classes and elements here,
+	basically overriding the other states.)
+	3) That's it!
+
+	In my example, this happens:
+	- If the browser is larger than 800px, the font will go to 17px
+	- If the browser is larger than 1024px, the background image disappears, font is larger and font becomes Helvetica
+
+	Un-comment and play around! :)
+*/
+/* 
+@media screen and (min-width: 800px) {
+
+	body {
+		font-size: 17px;
+	}
+
+	.content {
+		width: 85%;
+		margin: 0px;
+	}
 }
+
+@media screen and (min-width: 1024px) {
+	
+	body {
+		font-size: 18px;
+		background-image: none;
+	}
+
+	h1 {
+		font-family: Helvetica;
+	}
+
+}
+*/
