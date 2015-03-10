@@ -1,11 +1,8 @@
-/* 
- * Begin CSS Reset
- */
+/* Begin CSS Reset */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
-   License: none (public domain)
-*/
+   License: none (public domain) */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -52,27 +49,21 @@ table {
 	border-spacing: 0;
 }
 
-/* 
- * End CSS reset
- */
+/* end CSS reset */
 
-/*
- * Base (definitions of what basic elements look like)
- */
+/* base (definitions of what basic elements look like) */
 body {
 	font-family: 'Ubuntu', Helvetica, Sans-serif;
 	font-weight: lighter;
-
 	/* I'm working mobile-first. So the "basic" font size (meaning, screens up to 799px wide, phones and smaller)
-	is set to 18px. */
+	is set to 16px. */
 	font-size: 16px;
-	line-height: 18px;
-
-	/* Since only the home text is white, the base will be dark gray. */
+	line-height: 1.3em;
 	color: #333;
 	background-color: gray;
 }
 
+/* still need to have a look at spacing with percentages or viewport thingies instead of ems, and when that's applicable */
 p {
 	margin-top: 1em;
 	margin-bottom: .4em;
@@ -98,7 +89,8 @@ nav {
 	font-size: 1.4em;
 }
 
-/* Make sure you define the base size of "li" explicity, check above */
+/* Make sure you define the base size of "li" explicity, check above 
+--> why though, if I have a margin set, it will adjust to the text right? that is nice */
 nav li {
 	display: inline-block;
 	margin-left: 1.5em;
@@ -106,38 +98,13 @@ nav li {
 }
 
 /* content part */
-/* 
-	nando: you should give THIS box a width rather than the H1. Then you can keep this constant throughout
-	the site and not have to re-define or create a bunch of exceptions.
-
- */
 .content {
-	width: 90%;
+	width: 75%;
 	margin: 3em auto 0 auto;
-	/* vh is a CSS3 measurement. Works in most modern browsers, not old ones. Means "viewport height". I'm using 70% of it. */
 	height: 70vh;
 }
 
 /* landing-page */
-/*  You created a class (.landing-page) for an element that appears only once (h1).
-	Instead, let's use that class to define the body, and select things (like the h1) inside it. Example:
-	
-	HTML
-	<body class="landing-page">
-	...
-		<div class="content">
-			<h1>Your title here</h1>
-		</div>
-	...
-	</body>
-
-	CSS:
-	.landing .content h1 {
-		[make it white, center-aligned, etc]
-	}
-
-	.landing-page is now the section identifier. It specifies your section's backgrounds.
-*/
 .landing-page {
 	background: url("superman.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
@@ -147,12 +114,10 @@ nav li {
 }
 
 .landing-page h1 {
-	/* On this page ONLY, make h1 different: */
-	text-align: center;
 	color: white;
 	font-size: 4em;
-
-	/* Let's make your title vertically-centered by making it float! This is a CSS3 trick. */
+	line-height: 1.1em;
+	/* Now I still need to make a min-margin to the top so it doesn't go through the nav bar */
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
@@ -160,24 +125,13 @@ nav li {
 	transform: translateY(-50%);
 }
 
-/* Avoid creating classes when there are elements which are semantic and do the trick. <em> is perfect here. */
 .landing-page h1 em {
 	font-style: normal;
-	color: #FF67C0;
-}
-
-/* 
-	That way I could, for example, make it yellow on the about page:
-	.about h1 em {
 	color: #FAB71D;
-	}
-
-	Be careful, however, with these over-specific selectors. Be modular and re-usable whenever possible.
-*/
+}
 
 /* about, work and connect */
 .about {
-	/* repeated the background just in case you want different backgrounds in every section */
 	background: url("superman.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -186,7 +140,6 @@ nav li {
 }
 
 .text-box {
-
   	margin: 0px auto 60px auto;
 	background-color: white;
 	padding: 4em;
