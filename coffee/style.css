@@ -55,15 +55,15 @@ table {
 
 body {
 	font-family: serif;
-	font-size: 16px;
+	font-size: 18px;
 	color: #230B04;
-	line-height: 1.1em;
+	line-height: 1.3em;
 	text-align: center;
 }
 
 h3 {
 	font-family: sans-serif;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 }
 
@@ -78,9 +78,21 @@ p {
 
 /* layouts */
 
+.container {
+	position: relative;
+	min-height: 100%;
+}
+
+/* I made the container relative so the footer absolute positioning responds to the section element, but it still does not seem to work :( */
+
 header {
-	background: url("images/beans.jpg") no-repeat center center;
+	background: url("images/beans.jpg") no-repeat top center;
 	background-size: 100%;
+	height: 280px;
+}
+
+header img {
+	margin: 20px;
 }
 
 nav, footer {
@@ -89,26 +101,33 @@ nav, footer {
 	width: 100%;
 }
 
-/* note to self: think about how to get the space between the nav and the background image */
 
 nav li {
 	display: inline-block;
 	margin: 0.5rem 1.5rem;
 }
 
-.content {
-	width: 70%;
+section {
+	display: block;
+	width: 80%;
 	margin: 3rem auto;
 }
 
 article {
-	width: 45%;
+	width: 40%;
 	float: left;
 	padding: 0 1rem;
 }
 
 footer {
-	padding: 2em;
+	display: block;
+	height: 40px;
+	padding: 40px 0;
+
+/* when I comment the absolute part out-it doesn't stick to the bottom, why? I made everything display-block! :(
+also, how do I stick the footer to the bottom without making it block the section? I tried googling but I can't make it work.
+Help, Mr. Nando, help! */
+
 	position: absolute;
 	bottom: 0;
 }
