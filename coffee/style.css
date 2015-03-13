@@ -79,7 +79,8 @@ p {
 /* layouts */
 
 .container {
-	position: relative;
+	/*position: relative;*/
+	/* Removing this basically did the trick; it's not necessary. The child can be absolute and the parent as well. */
 	min-height: 100%;
 }
 
@@ -127,6 +128,12 @@ footer {
 /* when I comment the absolute part out-it doesn't stick to the bottom, why? I made everything display-block! :(
 also, how do I stick the footer to the bottom without making it block the section? I tried googling but I can't make it work.
 Help, Mr. Nando, help! */
+/*
+	Clean, readable code, very very nice work Roos.
+	Fixed your thing up there (line 83).
+	One question though: do you really want that to stick to the bottom of the screen? You'll have some weird shit happen
+	when you make the browser small: http://shots.nan.do/image/1t4644020q27
+*/
 
 	position: absolute;
 	bottom: 0;
