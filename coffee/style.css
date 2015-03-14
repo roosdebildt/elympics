@@ -54,16 +54,16 @@ table {
 /* base */
 
 body {
-	font-family: serif;
+	font-family: 'Lora', serif;
 	font-size: 18px;
-	color: #230B04;
+	color: #160702;
 	line-height: 1.3em;
 	text-align: center;
 }
 
 h3 {
 	font-family: sans-serif;
-	font-size: 1.5rem;
+	font-size: 1.5em;
 	font-weight: bold;
 }
 
@@ -78,63 +78,119 @@ p {
 
 /* layouts */
 
-.container {
-	/*position: relative;*/
-	/* Removing this basically did the trick; it's not necessary. The child can be absolute and the parent as well. */
-	min-height: 100%;
-}
+/* clearfix from http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/ */
 
-/* I made the container relative so the footer absolute positioning responds to the section element, but it still does not seem to work :( */
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;
+}
+ 
+.clearfix:after {
+  	clear: both;
+}
+ 
+.clearfix {
+  	zoom: 1; /* ie 6/7 */
+}
 
 header {
 	background: url("images/beans.jpg") no-repeat top center;
 	background-size: 100%;
-	height: 280px;
+	width: 100%;
+	height: auto;
 }
 
 header img {
-	margin: 20px;
+	margin: 1% 1% 2% 1%;
+    max-width: 15%;
 }
 
 nav, footer {
-	background-color: #230B04;
+	background-color: #160702;
 	color: #cebb99;
 	width: 100%;
 }
 
-
 nav li {
 	display: inline-block;
-	margin: 0.5rem 1.5rem;
+	width: 15%;
+	max-width: 150px;
+	margin: 1% 0;
 }
 
-section {
-	display: block;
+.content {
 	width: 80%;
-	margin: 3rem auto;
+	margin: 5% auto;
+	text-align: left;
 }
 
 article {
-	width: 40%;
+	width: 42%;
 	float: left;
-	padding: 0 1rem;
+	padding: 0 4%;
 }
 
 footer {
-	display: block;
-	height: 40px;
-	padding: 40px 0;
+	padding: 2% 0;
+}
 
-/* when I comment the absolute part out-it doesn't stick to the bottom, why? I made everything display-block! :(
-also, how do I stick the footer to the bottom without making it block the section? I tried googling but I can't make it work.
-Help, Mr. Nando, help! */
-/*
-	Clean, readable code, very very nice work Roos.
-	Fixed your thing up there (line 83).
-	One question though: do you really want that to stick to the bottom of the screen? You'll have some weird shit happen
-	when you make the browser small: http://shots.nan.do/image/1t4644020q27
+/* media queries 
+For the purpose of this exercise, 
+I assume the target-group of my coffee website mostly uses a generic laptop as opposed to a phone.
+For the blog-exercise, I'll do mobile-first
 */
 
-	position: absolute;
-	bottom: 0;
+/* super big fancy screens */
+
+@media screen and (min-width: 1000px) {
+	header {
+		background-size: 1024px;
+		height: 280px;
+		background-position: center;
+		background-color: #160702;
+	}
+
+	.content {
+		width: 75%;
+	}
+}	
+
+/* tablets */
+
+@media screen and (max-width: 900px) {
+
+	article {
+		float: none;
+		display: block;
+		width: 100%;
+		overflow: none;
+		padding: 2% 0;
+	}
+
+}
+
+/* phones */
+
+@media screen and (max-width: 600px) {
+	body {
+		font-size: 14px;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+
+	header {
+		background-image: none;
+		background-color: #230B04;
+	}
+
+	.content {
+		width: 90%;
+	}
+
+	nav {
+		border-top: 2px dashed #cebb99;
+	}
+
 }
