@@ -17,6 +17,9 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -97,7 +100,12 @@ a {
 
 nav li {
 	display: inline-block;
-	margin-right: 3%;
+	margin-left: 2rem; /* using a rem value rather than percentage */
+}
+
+/* sweet trick alert: look up nth-child */
+nav li:first-child {
+	margin-left: 0; /* this means the first appearence of this element will have this value */
 }
 
 header, article {
@@ -117,10 +125,25 @@ footer {
 	border-top: 2px solid black;
 }
 
+/*
+ * MODULES
+   (add here classes that are re-usable and not specific to a single layout element)
+ */
+
+.clearfix:after { 
+   content: " ";
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
 /* media queries */
 
 @media screen and (min-width: 1000px) {
 
+	/*
+	 *  BASE
+	 */
 	.container {
 		width: 95%;
 	}
@@ -135,18 +158,35 @@ footer {
 		margin-bottom: 2%;
 	}
 
+
+	/*
+	 *  LAYOUT
+	 */
+
+	.nav-title {
+		position: relative;
+		width: 50%;
+		float: left;
+	}
+
 	nav {
 		text-align: right;
-		width: 30%;
-		float: right;
+		width: 50%;
+		float: left;
 		margin-top: 91.25px;
 	}
 
 	header {
-	border-bottom: 2px solid black;
+		clear: both;
+		width: 100%;
+		border-bottom: 2px solid black;
 	}
 
 	/* in chrome, for some reason, the nav pops up underneath the bottom-bordr. but, when you refresh, it ends up above, huuhhhh? */
+
+	section {
+		clear: both;
+	}
 
 	.latest {
 		display: block;
@@ -163,3 +203,8 @@ footer {
 		max-width: 75em;
 	}
 }
+
+ /* For debugging only */
+/** {
+	border: 1px solid green !important;
+}*/
