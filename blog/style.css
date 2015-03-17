@@ -139,14 +139,14 @@ footer {
 		text-align: right;
 		width: 30%;
 		float: right;
-		margin-top: 91px;
+		margin-top: 91.25px;
 	}
 
 	header {
 	border-bottom: 2px solid black;
 	}
 
-	/* for some reason, the nav pops up underneath the bottom-bordr. but, when you refresh, it ends up above, huuhhhh? */
+	/* in chrome, for some reason, the nav pops up underneath the bottom-bordr. but, when you refresh, it ends up above, huuhhhh? */
 
 	.latest {
 		display: block;
@@ -156,10 +156,10 @@ footer {
 	}
 
 	.main {
-		float: left;
-		width: 55%;
-		/* is there a better way of giving the .main div the remaining space that .latest left on the right?
-		I asked our friend google but I'm still not sure how to do it best
-		*/
+		overflow: hidden;
+	}
+
+	article {
+		max-width: 75em;
 	}
 }
