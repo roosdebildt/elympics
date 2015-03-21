@@ -103,7 +103,7 @@ header {
 
 header img {
 	margin: 1% 1% 2% 1%;
-    max-width: 15%;
+    max-width: 20%;
 }
 
 nav, footer {
@@ -114,9 +114,9 @@ nav, footer {
 
 nav li {
 	display: inline-block;
-	width: 6rem;
+	width: auto;
 	font-size: 20px;
-	margin: 0.3em 0;
+	margin: 0.3em 1em;
 }
 
 .content {
@@ -131,7 +131,7 @@ article {
 }
 
 footer {
-	padding: 2% 0;
+	padding: 1em 0;
 }
 
 /* media queries - desktop-first */
@@ -166,6 +166,10 @@ footer {
 		overflow: none;
 		padding: 2% 0;
 	}
+
+	header {
+		background-size: 115%;
+	}
 }
 
 /* phones */
@@ -177,7 +181,7 @@ footer {
 
 	header {
 		background-image: none;
-		background-color: #230B04;
+		background-color: #060807;
 	}
 
 	nav {
@@ -185,6 +189,7 @@ footer {
 	}
 
 	nav li {
-		width: 20%;
+		margin: 0.4em;
 	}
+
 }
