@@ -56,14 +56,14 @@ table {
 body {
 	font-family: 'Lora', serif;
 	font-size: 18px;
-	color: #160702;
+	color: #060807;
 	line-height: 1.3em;
 	text-align: center;
 }
 
 h3 {
 	font-family: sans-serif;
-	font-size: 1.5em;
+	font-size: 1.4em;
 	font-weight: bold;
 }
 
@@ -74,6 +74,7 @@ a {
 
 p {
 	padding: 0.5rem 0;
+	max-width: 75em;
 }
 
 /* layouts */
@@ -106,59 +107,58 @@ header img {
 }
 
 nav, footer {
-	background-color: #160702;
+	background-color: #060807;
 	color: #cebb99;
 	width: 100%;
 }
 
 nav li {
 	display: inline-block;
-	width: 15%;
-	max-width: 150px;
-	margin: 1% 0;
+	width: 6rem;
+	font-size: 20px;
+	margin: 0.3em 0;
 }
 
 .content {
-	width: 80%;
+	width: 90%;
 	margin: 5% auto;
-	text-align: left;
 }
 
 article {
-	width: 42%;
+	width: 40%;
 	float: left;
-	padding: 0 4%;
+	padding: 0 5%;
 }
 
 footer {
 	padding: 2% 0;
 }
 
-/* media queries 
-For the purpose of this exercise, 
-I assume the target-group of my coffee website mostly uses a generic laptop as opposed to a phone.
-For the blog-exercise, I'll do mobile-first
-*/
+/* media queries - desktop-first */
 
 /* super big fancy screens */
+
+@media screen and (min-width: 1300px) {
+	.content {
+		width: 75%;
+		min-height: 380px;
+	}
+}
+
+/* minimum 1000px */
 
 @media screen and (min-width: 1000px) {
 	header {
 		background-size: 1024px;
 		height: 280px;
 		background-position: center;
-		background-color: #160702;
-	}
-
-	.content {
-		width: 75%;
+		background-color: #060807;
 	}
 }	
 
 /* tablets */
 
 @media screen and (max-width: 900px) {
-
 	article {
 		float: none;
 		display: block;
@@ -166,16 +166,11 @@ For the blog-exercise, I'll do mobile-first
 		overflow: none;
 		padding: 2% 0;
 	}
-
 }
 
 /* phones */
 
 @media screen and (max-width: 600px) {
-	body {
-		font-size: 14px;
-	}
-
 	h3 {
 		font-size: 1.3em;
 	}
@@ -185,12 +180,11 @@ For the blog-exercise, I'll do mobile-first
 		background-color: #230B04;
 	}
 
-	.content {
-		width: 90%;
-	}
-
 	nav {
 		border-top: 2px dashed #cebb99;
 	}
 
+	nav li {
+		width: 20%;
+	}
 }

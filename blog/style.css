@@ -54,7 +54,9 @@ table {
 
 /* end CSS reset */
 
-/* base */
+/* 
+ * BASE 
+ */
 
 body {
 	font-family: 'Helvetica', 'Arial', 'sans-serif';
@@ -79,6 +81,7 @@ h2 {
 
 h3 {
 	font-weight: bold;
+	padding-top: 0.4rem;
 }
 
 ul {
@@ -91,7 +94,9 @@ a {
 	color: inherit;
 }
 
-/* layout */
+/* 
+ * LAYOUT 
+ */
 
 .container {
 	width: 90%;
@@ -100,12 +105,11 @@ a {
 
 nav li {
 	display: inline-block;
-	margin-left: 2rem; /* using a rem value rather than percentage */
+	margin-left: 2rem;
 }
 
-/* sweet trick alert: look up nth-child */
 nav li:first-child {
-	margin-left: 0; /* this means the first appearence of this element will have this value */
+	margin-left: 0;
 }
 
 header, article {
@@ -123,21 +127,23 @@ article {
 
 footer {
 	border-top: 2px solid black;
+	padding: 0.5rem 0;
 }
 
 /*
  * MODULES
-   (add here classes that are re-usable and not specific to a single layout element)
  */
 
-.clearfix:after { 
+.clearfix:after {
    content: " ";
    display: block; 
    height: 0; 
    clear: both;
 }
 
-/* media queries */
+/*
+ * MEDIA QUERIES
+ */
 
 @media screen and (min-width: 1000px) {
 
@@ -150,7 +156,6 @@ footer {
 
 	h1 {
 		font-size: 128px;
-		display: inline-block;
 		border: none;
 	}
 
@@ -162,9 +167,7 @@ footer {
 	/*
 	 *  LAYOUT
 	 */
-
 	.nav-title {
-		position: relative;
 		width: 50%;
 		float: left;
 	}
@@ -173,19 +176,12 @@ footer {
 		text-align: right;
 		width: 50%;
 		float: left;
-		margin-top: 91.25px;
+		margin-top: 91.38px;
 	}
 
 	header {
-		clear: both;
 		width: 100%;
 		border-bottom: 2px solid black;
-	}
-
-	/* in chrome, for some reason, the nav pops up underneath the bottom-bordr. but, when you refresh, it ends up above, huuhhhh? */
-
-	section {
-		clear: both;
 	}
 
 	.latest {
@@ -203,8 +199,3 @@ footer {
 		max-width: 75em;
 	}
 }
-
- /* For debugging only */
-/** {
-	border: 1px solid green !important;
-}*/
