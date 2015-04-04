@@ -1,0 +1,82 @@
+body {
+	font-family: 'Gill Sans','Avenir','Open Sans';
+	color: #333333;
+	font-weight: lighter;
+	font-size: 18px;
+}
+
+h1 {
+	text-align: center;
+	font-weight: lighter;
+/*	font-family: 'Montserrat';*/
+}
+
+h3 {
+	color: #E4001B;
+	margin-top: 0;
+}
+
+a {
+	color: #E4001B;
+}
+
+footer img {
+	width: 30%;
+	height: auto;
+	max-width: 200px;
+}
+
+/* LAYOUT */
+
+.navbar {
+	margin: 0;
+	padding: 1rem 0;
+}
+
+/* MODULES */
+
+.navbar-brand {
+	font-size: 2em;
+	letter-spacing: 0.1em;
+}
+
+.navbar a {
+	color: inherit;
+}
+
+.navbar a:hover {
+	color: #E4001B;
+	background-color: #FFF !important;
+}
+
+.content {
+	background-color: #F5F5F5;
+	padding: 4em 0;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.home-image {
+	background: url("../images/oculusguy.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;
+}
+
+.jumbotron {
+	color: #FFF;
+	letter-spacing: 1em;
+	margin-bottom: 0;
+}
+
+.footer {
+	text-align: center;
+	color: #6F706F;
+	font-weight: normal;
+	padding: 1em 0;
+}
