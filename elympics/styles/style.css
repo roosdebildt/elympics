@@ -2,23 +2,40 @@ body {
 	font-family: 'Gill Sans','Avenir','Open Sans';
 	color: #333333;
 	font-weight: lighter;
-	font-size: 18px;
+	font-size: 17px;
 }
 
 h1 {
 	text-align: center;
 	font-weight: lighter;
+	margin: 0;
 /*	font-family: 'Montserrat';*/
 }
 
 h3 {
 	color: #E4001B;
+	margin-top: 2em;
+}
+
+h3:nth-child(1) {
 	margin-top: 0;
 }
 
 a {
 	color: #E4001B;
 }
+
+iframe {
+	width: 50%;
+}
+
+/*th {
+	font-weight: normal;
+}
+
+table {
+	margin-top: 1.5em;
+}*/
 
 footer img {
 	width: 30%;
@@ -32,6 +49,7 @@ footer img {
 	margin: 0;
 	padding: 1rem 0;
 }
+
 
 /* MODULES */
 
@@ -59,15 +77,6 @@ footer img {
     margin: 0 auto;
 }
 
-.home-image {
-	background: url("../images/oculusguy.jpg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-	height: 50vh;
-}
-
 .jumbotron {
 	color: #FFF;
 	letter-spacing: 1em;
@@ -81,10 +90,48 @@ footer img {
 	padding: 1em 0;
 }
 
-/*.vertical-align { 
+.vertical-align { 
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-}*/
+}
+
+/* JUMBOTRON IMAGES */
+
+.home-image {
+	background: url("../images/oculusguy.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;
+}
+
+.business-image {
+	background: url("../images/businessmodel.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;	
+}
+
+.ebox-image {
+	background: url("../images/eboxes.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;	
+}
+
+.about-image {
+	background: url("../images/about3.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 50vh;	
+}
