@@ -1,6 +1,6 @@
 body {
 	font-family: 'Gill Sans','Avenir','Open Sans';
-	color: #333333;
+	color: #333;
 	font-weight: lighter;
 	font-size: 17px;
 }
@@ -9,7 +9,6 @@ h1 {
 	text-align: center;
 	font-weight: lighter;
 	margin: 0;
-/*	font-family: 'Montserrat';*/
 }
 
 h3 {
@@ -21,12 +20,28 @@ h3:nth-child(1) {
 	margin-top: 0;
 }
 
-a {
+a #title4 {
+	color: #FFF;
+	text-decoration: none;
+}
+
+a:hover #title4 {
 	color: #E4001B;
 }
 
-iframe {
-	width: 50%;
+a, a:hover, a:visited{
+	text-decoration: none;
+	color: #E4001B;
+}
+
+/*have a look at the a: hover*/
+
+figcaption {
+	font-style: italic;
+}
+
+img {
+	width: 100%;
 }
 
 /*th {
@@ -50,8 +65,23 @@ footer img {
 	padding: 1rem 0;
 }
 
+/*.home-arrow {
+	position: relative;
+	top: 90%;
+}*/
 
 /* MODULES */
+
+.gray {
+	filter: gray; /* IE6-9 */
+  		filter: grayscale(1);  /* Firefox 35+ */
+  		-webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  	}
+
+img.gray:hover {
+	filter: none;
+		-webkit-filter: grayscale(0%);
+}
 
 .navbar-brand {
 	font-size: 2em;
@@ -65,6 +95,10 @@ footer img {
 .navbar a:hover {
 	color: #E4001B;
 	background-color: #FFF !important;
+}
+
+.centered {
+	margin: auto;
 }
 
 .content {
@@ -98,9 +132,26 @@ footer img {
 	transform: translateY(-50%);
 }
 
+.top-margin {
+	margin-top: 3rem;
+}
+
+.bottom-margin {
+	margin-bottom: 3rem;
+}
+
 /* JUMBOTRON IMAGES */
 
 .home-image {
+	background: url("../images/technology.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 90vh;
+}
+
+.technology-image {
 	background: url("../images/oculusguy.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
