@@ -1,3 +1,5 @@
+/* BASE */
+
 body {
 	font-family: 'Gill Sans','Avenir','Open Sans';
 	color: #333;
@@ -20,21 +22,10 @@ h3:nth-child(1) {
 	margin-top: 0;
 }
 
-a #title4 {
-	color: #FFF;
-	text-decoration: none;
-}
-
-a:hover #title4 {
-	color: #E4001B;
-}
-
-a, a:hover, a:visited{
+a, a:visited, a:hover {
 	text-decoration: none;
 	color: #E4001B;
 }
-
-/*have a look at the a: hover*/
 
 figcaption {
 	font-style: italic;
@@ -43,14 +34,6 @@ figcaption {
 img {
 	width: 100%;
 }
-
-/*th {
-	font-weight: normal;
-}
-
-table {
-	margin-top: 1.5em;
-}*/
 
 footer img {
 	width: 30%;
@@ -65,12 +48,32 @@ footer img {
 	padding: 1rem 0;
 }
 
-/*.home-arrow {
-	position: relative;
-	top: 90%;
-}*/
-
 /* MODULES */
+
+.bottom-margin {
+	margin-bottom: 30px;
+}
+
+.centered {
+	margin: auto;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.content {
+	background-color: #F5F5F5;
+	padding: 4em 0;
+}
+
+.footer {
+	text-align: center;
+	color: #6F706F;
+	font-weight: normal;
+	padding: 1em 0;
+}
 
 .gray {
 	filter: gray; /* IE6-9 */
@@ -81,6 +84,30 @@ footer img {
 img.gray:hover {
 	filter: none;
 		-webkit-filter: grayscale(0%);
+}
+
+.home-arrow {
+	position: absolute;
+	top: 95%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+}
+
+.jumbotron {
+	color: #FFF;
+	letter-spacing: 1em;
+	margin-bottom: 0;
+}
+
+.jumbotron a {
+	color: #FFF;
+}
+
+.jumbotron a:hover {
+	color: #E4001B;
 }
 
 .navbar-brand {
@@ -97,47 +124,15 @@ img.gray:hover {
 	background-color: #FFF !important;
 }
 
-.centered {
-	margin: auto;
+.top-margin {
+	margin-top: 30px;
 }
-
-.content {
-	background-color: #F5F5F5;
-	padding: 4em 0;
-}
-
-.col-centered {
-    float: none;
-    margin: 0 auto;
-}
-
-.jumbotron {
-	color: #FFF;
-	letter-spacing: 1em;
-	margin-bottom: 0;
-}
-
-.footer {
-	text-align: center;
-	color: #6F706F;
-	font-weight: normal;
-	padding: 1em 0;
-}
-
 .vertical-align { 
 	position: relative;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
-}
-
-.top-margin {
-	margin-top: 30px;
-}
-
-.bottom-margin {
-	margin-bottom: 30px;
 }
 
 /* JUMBOTRON IMAGES */
@@ -186,3 +181,16 @@ img.gray:hover {
 	background-size: cover;
 	height: 50vh;	
 }
+
+/* MEDIA QUERIES */
+
+@media (min-width: @screen-lg-min) {
+	body {
+		font-size: 20px;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+}
+
