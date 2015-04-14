@@ -31,8 +31,16 @@ figcaption {
 	font-style: italic;
 }
 
+figure {
+	margin: 20px 0;
+}
+
 img {
 	width: 100%;
+}
+
+iframe {
+	margin: 30px 0;
 }
 
 footer img {
