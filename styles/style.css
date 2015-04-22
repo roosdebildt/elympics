@@ -27,6 +27,12 @@ a, a:visited, a:hover {
 	color: #E4001B;
 }
 
+p a:hover {
+	text-decoration: none;
+	color: #B0001B;
+}
+
+
 figcaption {
 	font-style: italic;
 }
@@ -49,18 +55,7 @@ footer img {
 	max-width: 200px;
 }
 
-/* LAYOUT */
-
-.navbar {
-	margin: 0;
-	padding: 1rem 0;
-}
-
 /* MODULES */
-
-.bottom-margin {
-	margin-bottom: 30px;
-}
 
 .centered {
 	margin: auto;
@@ -118,9 +113,9 @@ img.gray:hover {
 	color: #E4001B;
 }
 
-.navbar-brand {
-	font-size: 2em;
-	letter-spacing: 0.1em;
+.navbar {
+	margin: 0;
+	padding: 1rem 0;
 }
 
 .navbar a {
@@ -132,9 +127,15 @@ img.gray:hover {
 	background-color: #FFF !important;
 }
 
-.top-margin {
-	margin-top: 30px;
+.navbar-brand {
+	font-size: 2em;
+	letter-spacing: 0.1em;
 }
+
+.no-margin {
+	margin-bottom: 0;
+}
+
 .vertical-align { 
 	position: relative;
 	top: 50%;
